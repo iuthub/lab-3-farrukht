@@ -18,10 +18,21 @@
 			<ul id="musiclist">
 				<?php 
 				$songs=glob("songs/*.mp3");
+				$playlist=glob("songs/*.txt");
 				foreach ($songs as $songsfile) {
 				?>
 				<li class="mp3item"><a href="songs/<?= basename($songsfile); ?>">
 					<?= basename($songsfile);?>
+				</a>
+				</li>
+				<?php 
+			}
+			?>
+			<?php 
+			foreach ($playlist as $playlistfile) {
+			?>
+			<li class="playlistitem"><a href="songs/<?= basename($playlistfile); ?>">
+					<?= basename($playlistfile);?>
 				</a>
 				</li>
 				<?php
